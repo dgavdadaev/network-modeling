@@ -1,14 +1,17 @@
 {
-  "name": "simulation-modeling",
+  "name": "network-modeling",
   "version": "1.0.0",
-  "description": "Имитационное моделирование",
-  "main": "index.js",
-  "repository": "https://github.com/dgavdadaev/2026-1--study--simulation-modeling.git",
-  "author": "Djamal Avdadaev <avdadaevdjamal@gmail.com>",
+  "private": true,
+  "description": "Учебные лабораторные работы по моделированию и администрированию компьютерных сетей",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dgavdadaev/network-modeling.git"
+  },
+  "author": "Djamal Avdadaev",
   "license": "CC-BY-4.0",
-    "config": {
-	"commitizen": {
-	    "path": "cz-customizable"
-	}
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
     }
+  }
 }
