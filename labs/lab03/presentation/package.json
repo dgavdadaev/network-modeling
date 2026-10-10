@@ -1,0 +1,7 @@
+{
+  "name": "lab03-presentation-md",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {"build": "node build_from_markdown.js"},
+  "dependencies": {"pptxgenjs": "^3.12.0"}
+}
