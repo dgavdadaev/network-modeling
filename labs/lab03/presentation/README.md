@@ -5,7 +5,7 @@
 ## Состав
 
 - `Lab03_Presentation_Source.md` — **исходник** презентации, 42 слайда.
-- `assets/01.png` — `assets/29.png` — все 29 скриншотов практической части.
+- `image/1.png` — `image/29.png` — все 29 скриншотов практической части.
 - `build_from_markdown.js` — генератор редактируемого PowerPoint из Markdown.
 - `Lab03_Presentation_Cambria_Calibri.pptx` — готовый PowerPoint.
 - `Lab03_Presentation_Cambria_Calibri.pdf` — экспорт этой же презентации в PDF.
