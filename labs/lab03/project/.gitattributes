@@ -219,3 +219,10 @@ bin/	binary
 *.R text
       
 
+# Lab 03 - Unix line endings
+*.py text eol=lf
+Makefile text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.dat text eol=lf
+*.sh text eol=lf

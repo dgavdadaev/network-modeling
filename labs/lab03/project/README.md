@@ -1,28 +1,69 @@
-# project
 
-This code base is using the [Julia Language](https://julialang.org/) and
-[DrWatson](https://juliadynamics.github.io/DrWatson.jl/stable/)
-to make a reproducible scientific project named
-> project
+# Лабораторная работа №3
 
-To (locally) reproduce this project, do the following:
+## Моделирование сетей передачи данных
 
-0. Download this code base. Notice that raw data are typically not included in the
-   git-history and may need to be downloaded independently.
-1. Open a Julia console and do:
-   ```
-   julia> using Pkg
-   julia> Pkg.add("DrWatson") # install globally, for using `quickactivate`
-   julia> Pkg.activate("path/to/this/project")
-   julia> Pkg.instantiate()
-   ```
+**Тема:** Измерение и тестирование пропускной способности сети. Воспроизводимый эксперимент.
 
-This will install all necessary packages for you to be able to run the scripts and
-everything should work out of the box, including correctly finding local paths.
+## Цель работы
 
-You may notice that most scripts start with the commands:
-```julia
-using DrWatson
-@quickactivate "project"
-```
-which auto-activate the project and enable local path handling from DrWatson.
+Изучение Python API Mininet и автоматизация измерений пропускной способности сети с помощью iPerf3.
+
+## Используемые инструменты
+
+- Ubuntu 20.04
+- Mininet
+- Python 3
+- iPerf3
+- GNU Make
+- iperf3_plotter
+- Gnuplot
+
+## Структура проекта
+
+- `lab_iperf3_topo/` — исходная и ограниченная топологии Mininet.
+- `iperf3/lab_iperf3.py` — автоматический эксперимент.
+- `iperf3/Makefile` — автоматизация запуска.
+- `iperf3/iperf_result.json` — результаты измерения.
+- `iperf3/results/` — данные и PDF-графики.
+
+## Параметры эксперимента
+
+Топология: h1 — s3 — h2.
+
+- IP h1: 10.0.0.1
+- IP h2: 10.0.0.2
+- Пропускная способность каждого канала: 100 Мбит/с
+- Задержка каждого канала: 75 мс
+- Искусственные потери: 0%
+- Продолжительность теста iPerf3: 10 секунд
+
+## Воспроизведение эксперимента
+
+Команды выполняются в виртуальной машине Linux с установленными Mininet, iPerf3 и plot_iperf.sh.
+
+Перейти в каталог `iperf3`, содержащий Makefile.
+
+Очистить результаты:
+
+    make clean
+
+Запустить эксперимент:
+
+    make
+
+Проверить сформированные файлы:
+
+    ls -lh iperf_result.json results/
+
+## Полученные результаты
+
+Первый запуск: 9,97 Мбит/с.
+
+Повторный запуск через Makefile: 35,62 Мбит/с.
+
+Процедура эксперимента успешно повторена. Численные результаты различаются, что требует учёта особенностей TCP и виртуальной среды.
+
+## Результат работы
+
+Разработан воспроизводимый эксперимент, позволяющий автоматически создавать топологию Mininet, запускать iPerf3, сохранять результаты в JSON и строить графики.
