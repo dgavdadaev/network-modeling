@@ -1,0 +1,10 @@
+#!/usr/bin/gnuplot --persist
+
+set terminal png crop
+set output 'ping.png'
+set xlabel "Sequence number"
+set ylabel "Delay (ms)"
+set grid
+
+plot "ping_100.dat" using 1:2 with lines title "100ms per host", \
+     "ping_50.dat" using 1:2 with lines title "50ms per host"
